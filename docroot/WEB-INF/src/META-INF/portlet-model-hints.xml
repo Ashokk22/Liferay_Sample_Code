@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.warrior.entitymanager.model.EntityManager">
+		<field name="uuid" type="String" />
+		<field name="entityId" type="long" />
+		<field name="entityAddDate" type="String" />
+		<field name="title" type="String" />
+		<field name="description" type="String" />
+		<field name="entitystatus" type="int" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="vocubalaryId" type="long" />
+		<field name="categoryId" type="long" />
+	</model>
+</model-hints>

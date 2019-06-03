@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.warrior.entitymanager">
+	<author>HP</author>
+	<namespace>warrior</namespace>
+
+	<entity name="EntityManager" uuid="true" local-service="true" remote-service="true" trash-enabled="true">
+	
+		<!-- PK fields -->
+	    <column name="entityId" type="long" primary="true" />
+	    
+	    <!-- Other fields -->
+	    <column name="entityAddDate" type="String" />
+	    <column name="title" type="String" />
+	    <column name="description" type="String" />
+	    <column name="entitystatus" type="int" />
+	    
+	    
+		<!-- Audit fields -->
+	    <column name="companyId" type="long" />
+	    <column name="groupId" type="long" />
+	    <column name="userId" type="long" />
+	    <column name="vocubalaryId" type="long"></column>
+		<column name="categoryId" type="long"></column>
+	
+	   <!--  Order -->
+	  <order>
+	    <order-column name="entityId" order-by="asc" />
+	    <order-column name="entityAddDate" order-by="desc" />
+	  </order>
+	
+	
+	 	<!--  Finders -->
+	    <finder name="GroupId" return-type="Collection">
+	      <finder-column name="groupId" />
+	    </finder>
+	
+	    <finder name="CompanyId" return-type="Collection">
+	      <finder-column name="companyId" />
+	    </finder>
+	
+	    <finder name="Title" return-type="Collection">
+	      <finder-column name="title" />
+	    </finder>
+	    
+	    <finder name="EntityAddDate" return-type="Collection">
+	      <finder-column name="entityAddDate" />
+	    </finder>
+	    
+	    <finder name="Description" return-type="Collection">
+	      <finder-column name="description" />
+	    </finder>
+	    
+	    <finder name="VocubalaryId" return-type="Collection">
+	      <finder-column name="vocubalaryId" />
+	    </finder>
+	    
+	    <finder name="EntityId" return-type="Collection">
+	      <finder-column name="entityId" />
+	    </finder>
+	    
+	    <finder name="G_S" return-type="Collection">
+	      <finder-column name="groupId" />
+	      <finder-column name="entitystatus" />
+	    </finder>
+    
+	    <finder name="CategoryId" return-type="Collection">
+	      <finder-column name="categoryId" />
+	    </finder>
+	    <reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+		<reference package-path="com.liferay.portal" entity="User" />
+   		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+   		<reference package-path="com.liferay.portlet.trash" entity="TrashEntry" />
+		<reference package-path="com.liferay.portlet.trash" entity="TrashVersion" />
+  </entity>
+</service-builder>
